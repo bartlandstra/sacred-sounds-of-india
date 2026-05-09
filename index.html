@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sacred Sounds of India — A knowledge channel for Hindustani classical music in the Netherlands</title>
+<meta name="description" content="A curated Dutch guide to Hindustani classical music — good teachers to study with, good concerts to hear, and a primer on the tradition." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:      '#1A0F0A',
+          ink2:     '#2A1A12',
+          saffron:  '#E08E45',
+          saffron2: '#D2772E',
+          crimson:  '#7C1F2E',
+          gold:     '#C8A560',
+          gold2:    '#A8853F',
+          ivory:    '#F8F0E1',
+          ivory2:   '#F1E5CE',
+          mist:     '#EFE3CC',
+        },
+        fontFamily: {
+          serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+          sans:  ['Outfit', 'ui-sans-serif', 'system-ui'],
+          deva:  ['"Tiro Devanagari Sanskrit"', 'serif'],
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    background: #F8F0E1;
+    color: #2A1A12;
+    font-family: 'Outfit', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+  }
+  h1,h2,h3 { font-family: 'Cormorant Garamond', Georgia, serif; line-height: 1.05; letter-spacing: -0.025em; }
+  .display { font-family: 'Cormorant Garamond', Georgia, serif; letter-spacing: -0.035em; line-height: 0.95; }
+  .deva { font-family: 'Tiro Devanagari Sanskrit', serif; letter-spacing: 0; }
+
+  .hero-bg {
+    background:
+      radial-gradient(ellipse 80% 60% at 80% 20%, rgba(224,142,69,0.55) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 50% at 15% 80%, rgba(124,31,46,0.55) 0%, transparent 60%),
+      radial-gradient(ellipse 100% 80% at 50% 110%, rgba(200,165,96,0.35) 0%, transparent 70%),
+      linear-gradient(180deg, #1A0F0A 0%, #2A1A12 100%);
+  }
+  .grain {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.55'/></svg>");
+    opacity: 0.18;
+    mix-blend-mode: overlay;
+  }
+
+  .shadow-saffron {
+    box-shadow:
+      0 1px 2px rgba(26,15,10,0.08),
+      0 8px 20px -8px rgba(124,31,46,0.18),
+      0 24px 48px -16px rgba(224,142,69,0.22);
+  }
+
+  .img-warm { position: relative; overflow: hidden; border-radius: 4px; }
+  .img-warm > img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 900ms cubic-bezier(.2,.7,.2,1); }
+  .img-warm::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, transparent 50%, rgba(26,15,10,0.55) 100%),
+      linear-gradient(180deg, rgba(124,31,46,0.10), rgba(224,142,69,0.10));
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+  .img-warm:hover > img { transform: scale(1.03); }
+
+  .lotus-divider { display: flex; align-items: center; justify-content: center; gap: 14px; color: #C8A560; }
+  .lotus-divider::before, .lotus-divider::after {
+    content: ""; flex: 1; max-width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,165,96,0.6), transparent);
+  }
+
+  .nav-link { position: relative; font-size: 0.92rem; letter-spacing: 0.04em; padding: 6px 2px; }
+  .nav-link::after {
+    content: ""; position: absolute; left: 0; right: 100%; bottom: 0;
+    height: 1px; background: currentColor;
+    transition: right 320ms cubic-bezier(.2,.7,.2,1);
+  }
+  .nav-link:hover::after, .nav-link:focus-visible::after { right: 0; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px; border-radius: 999px;
+    background: #E08E45; color: #1A0F0A;
+    font-weight: 500; letter-spacing: 0.02em;
+    transition: transform 220ms cubic-bezier(.2,.7,.2,1), box-shadow 220ms;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.25) inset,
+      0 18px 30px -12px rgba(224,142,69,0.55);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset, 0 0 0 1px rgba(124,31,46,0.15), 0 24px 40px -14px rgba(224,142,69,0.7); }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-primary:focus-visible { outline: 2px solid #C8A560; outline-offset: 3px; }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px; border-radius: 999px;
+    border: 1px solid rgba(248,240,225,0.45); color: #F8F0E1;
+    transition: background-color 220ms, border-color 220ms, transform 220ms;
+  }
+  .btn-ghost:hover { background-color: rgba(248,240,225,0.06); border-color: rgba(248,240,225,0.8); }
+  .btn-ghost:focus-visible { outline: 2px solid #C8A560; outline-offset: 3px; }
+
+  .btn-line {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 20px; border-radius: 999px;
+    border: 1px solid rgba(124,31,46,0.4); color: #7C1F2E;
+    transition: background-color 220ms, border-color 220ms;
+  }
+  .btn-line:hover { background-color: rgba(124,31,46,0.06); border-color: rgba(124,31,46,0.85); }
+  .btn-line:focus-visible { outline: 2px solid #C8A560; outline-offset: 3px; }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+    border: 1px solid rgba(200,165,96,0.4); color: #A8853F;
+    background: rgba(248,240,225,0.4);
+  }
+
+  .filter-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 999px;
+    font-size: 0.82rem;
+    border: 1px solid rgba(168,133,63,0.3); color: #2A1A12;
+    background: rgba(248,240,225,0.7);
+    cursor: pointer;
+    transition: background-color 220ms, border-color 220ms, color 220ms;
+  }
+  .filter-chip:hover { border-color: rgba(124,31,46,0.5); }
+  .filter-chip.is-active { background: #2A1A12; color: #F8F0E1; border-color: #2A1A12; }
+
+  .card {
+    background: #FFFCF6;
+    border: 1px solid rgba(168,133,63,0.18);
+    border-radius: 6px;
+    transition: transform 320ms cubic-bezier(.2,.7,.2,1), box-shadow 320ms, border-color 320ms;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(168,133,63,0.4);
+    box-shadow: 0 1px 2px rgba(26,15,10,0.06), 0 18px 36px -14px rgba(124,31,46,0.18);
+  }
+
+  .mandala { position: absolute; pointer-events: none; opacity: 0.10; }
+
+  .concert-row {
+    border-top: 1px solid rgba(168,133,63,0.25);
+    transition: background-color 320ms;
+  }
+  .concert-row:last-child { border-bottom: 1px solid rgba(168,133,63,0.25); }
+  .concert-row:hover { background-color: rgba(248,240,225,0.6); }
+
+  .underline-soft {
+    background-image: linear-gradient(90deg, #C8A560, #C8A560);
+    background-position: 0 100%;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    padding-bottom: 2px;
+  }
+  .wave { height: 1px; background: linear-gradient(90deg, transparent, rgba(200,165,96,0.7), transparent); }
+
+  /* portrait — initials */
+  .portrait {
+    width: 100%; aspect-ratio: 1 / 1;
+    border-radius: 100%;
+    background: radial-gradient(circle at 30% 25%, #E08E45, #7C1F2E 70%, #1A0F0A);
+    color: #F8F0E1;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    border: 1px solid rgba(200,165,96,0.4);
+    box-shadow: 0 1px 2px rgba(26,15,10,0.08), 0 24px 48px -16px rgba(124,31,46,0.25);
+    position: relative; overflow: hidden;
+  }
+  .portrait::after {
+    content: ""; position: absolute; inset: 0; border-radius: 100%;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.55'/></svg>");
+    opacity: 0.22; mix-blend-mode: overlay;
+  }
+
+  /* concept card hover */
+  .concept {
+    background: #FFFCF6;
+    border: 1px solid rgba(168,133,63,0.22);
+    border-radius: 8px;
+    transition: transform 320ms cubic-bezier(.2,.7,.2,1), box-shadow 320ms, border-color 320ms;
+  }
+  .concept:hover {
+    transform: translateY(-2px);
+    border-color: rgba(124,31,46,0.45);
+    box-shadow: 0 1px 2px rgba(26,15,10,0.06), 0 18px 36px -14px rgba(224,142,69,0.18);
+  }
+
+  /* arc visual */
+  .arc-step {
+    position: relative; padding-top: 24px;
+  }
+  .arc-step::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C8A560, transparent);
+  }
+  .arc-step .num {
+    position: absolute; top: -12px; left: 0;
+    background: #F8F0E1; padding-right: 12px;
+    color: #A8853F; font-size: 11px; letter-spacing: 0.3em;
+  }
+
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+</style>
+</head>
+
+<body class="bg-ivory text-ink2 selection:bg-saffron selection:text-ink">
+
+<!-- ===================== TOP BAR ===================== -->
+<header class="absolute top-0 left-0 right-0 z-30">
+  <div class="max-w-[1240px] mx-auto px-6 lg:px-10 pt-6 lg:pt-8 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3 text-ivory">
+      <span class="relative inline-block w-10 h-10">
+        <svg viewBox="0 0 40 40" class="w-10 h-10 text-saffron">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.55"/>
+          <circle cx="20" cy="20" r="13" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.7"/>
+          <g stroke="currentColor" stroke-width="0.7" fill="none" opacity="0.95">
+            <path d="M20 6 C25 14, 25 26, 20 34 C15 26, 15 14, 20 6 Z"/>
+            <path d="M6 20 C14 15, 26 15, 34 20 C26 25, 14 25, 6 20 Z"/>
+          </g>
+          <circle cx="20" cy="20" r="2" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="leading-tight">
+        <span class="block text-ivory text-[15px] font-medium tracking-[0.18em]">SACRED SOUNDS</span>
+        <span class="block text-gold text-[11px] tracking-[0.32em]">— OF INDIA —</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-ivory">
+      <a class="nav-link" href="#lessons">Lessons</a>
+      <a class="nav-link" href="#concerts">Concerts</a>
+      <a class="nav-link" href="#theory">A primer</a>
+      <a class="nav-link" href="#about">About us</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#contact" class="hidden sm:inline-flex items-center gap-2 text-ivory text-sm border border-ivory/40 hover:border-ivory/80 transition-colors px-4 py-2 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-saffron"></span>
+        Submit a listing
+      </a>
+      <details class="lg:hidden relative">
+        <summary class="text-ivory p-2">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </summary>
+        <div class="absolute right-0 mt-2 w-56 bg-ink border border-gold/30 rounded p-4 flex flex-col gap-3 text-ivory text-sm">
+          <a href="#lessons">Lessons</a>
+          <a href="#concerts">Concerts</a>
+          <a href="#theory">A primer</a>
+          <a href="#about">About us</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero-bg relative overflow-hidden">
+  <div class="grain"></div>
+
+  <svg class="mandala" style="top:-120px; right:-120px; width:520px; height:520px;" viewBox="0 0 200 200" fill="none">
+    <g stroke="#C8A560" stroke-width="0.4">
+      <circle cx="100" cy="100" r="40"/><circle cx="100" cy="100" r="55"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="85"/><circle cx="100" cy="100" r="95"/>
+      <circle cx="100" cy="100" r="25"/>
+    </g>
+    <g stroke="#C8A560" stroke-width="0.4" fill="none" transform="translate(100 100)">
+      <g id="petal"><path d="M0 -25 Q 10 -45 0 -70 Q -10 -45 0 -25 Z"/></g>
+      <use href="#petal" transform="rotate(30)"/><use href="#petal" transform="rotate(60)"/>
+      <use href="#petal" transform="rotate(90)"/><use href="#petal" transform="rotate(120)"/>
+      <use href="#petal" transform="rotate(150)"/><use href="#petal" transform="rotate(180)"/>
+      <use href="#petal" transform="rotate(210)"/><use href="#petal" transform="rotate(240)"/>
+      <use href="#petal" transform="rotate(270)"/><use href="#petal" transform="rotate(300)"/>
+      <use href="#petal" transform="rotate(330)"/>
+    </g>
+  </svg>
+
+  <div class="relative max-w-[1240px] mx-auto px-6 lg:px-10 pt-44 lg:pt-56 pb-32 lg:pb-40">
+    <div class="grid grid-cols-12 gap-8 items-end">
+      <div class="col-span-12 lg:col-span-8">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="w-12 h-px bg-gold"></span>
+          <span class="text-gold text-[12px] tracking-[0.4em] uppercase">A knowledge channel · Nederland</span>
+        </div>
+
+        <p class="deva text-saffron text-3xl mb-4 select-none" aria-hidden="true">सङ्गीत</p>
+
+        <h1 class="display text-ivory text-[60px] sm:text-[80px] lg:text-[112px] font-light">
+          Where to <em class="italic text-saffron">study</em><br/>
+          Indian classical music,<br/>
+          and where to <span class="underline-soft">hear it</span>.
+        </h1>
+
+        <p class="mt-10 max-w-xl text-ivory/80 text-lg leading-relaxed">
+          A curated Dutch guide to Hindustani classical music —
+          good teachers to study with, good concerts to listen to,
+          and a quiet primer on the tradition itself.
+        </p>
+
+        <div class="mt-12 flex flex-wrap items-center gap-4">
+          <a href="#lessons" class="btn-primary">
+            Find a teacher
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#concerts" class="btn-ghost">Upcoming concerts</a>
+        </div>
+      </div>
+
+      <div class="col-span-12 lg:col-span-4 hidden lg:block">
+        <div class="border-l border-gold/30 pl-6 text-ivory/70 max-w-xs">
+          <p class="text-[11px] tracking-[0.3em] uppercase text-gold mb-3">Who we are</p>
+          <p class="text-sm leading-relaxed text-mist">
+            A small group of Dutch lovers of Indian classical music.
+            We don't teach. We don't perform. We point you to
+            the people who do it well.
+          </p>
+          <a href="#about" class="mt-4 inline-flex items-center gap-2 text-ivory border-b border-ivory/30 hover:border-ivory pb-1 transition-colors text-sm">
+            More about us
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="mt-12 border-l border-gold/30 pl-6">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-saffron opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-saffron"></span>
+            </span>
+            <span class="text-[12px] tracking-[0.3em] text-gold uppercase">Open call</span>
+          </div>
+          <p class="text-ivory/85 text-sm leading-relaxed">
+            Are you a teacher of Indian classical music in NL,
+            or organising a concert? Send it to us — we'll list it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-ivory pointer-events-none"></div>
+</section>
+
+
+<!-- ===================== INTRO BAND ===================== -->
+<section class="bg-ivory border-y border-gold/20">
+  <div class="max-w-[1240px] mx-auto px-6 lg:px-10 py-10 grid grid-cols-12 gap-6 items-center">
+    <div class="col-span-12 sm:col-span-4 flex items-center gap-4">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C1F2E" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+      <div>
+        <p class="text-[11px] tracking-[0.25em] uppercase text-gold2">Curated teachers</p>
+        <p class="text-ink/75 text-sm">Across the Netherlands</p>
+      </div>
+    </div>
+    <div class="col-span-12 sm:col-span-4 flex items-center gap-4">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C1F2E" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+      <div>
+        <p class="text-[11px] tracking-[0.25em] uppercase text-gold2">Upcoming concerts</p>
+        <p class="text-ink/75 text-sm">From house concerts to halls</p>
+      </div>
+    </div>
+    <div class="col-span-12 sm:col-span-4 flex items-center gap-4">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C1F2E" stroke-width="1.4"><path d="M4 19V5a2 2 0 012-2h12a2 2 0 012 2v14M4 19a2 2 0 002 2h12a2 2 0 002-2M8 7h8M8 11h8M8 15h5"/></svg>
+      <div>
+        <p class="text-[11px] tracking-[0.25em] uppercase text-gold2">A short primer</p>
+        <p class="text-ink/75 text-sm">If you're new to the music</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== LESSONS ===================== -->
+<section id="lessons" class="bg-mist/40 relative overflow-hidden">
+  <svg class="mandala" style="bottom:-180px; left:-180px; width:560px; height:560px;" viewBox="0 0 200 200" fill="none">
+    <g stroke="#7C1F2E" stroke-width="0.3" fill="none">
+      <circle cx="100" cy="100" r="40"/><circle cx="100" cy="100" r="55"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="85"/>
+    </g>
+  </svg>
+
+  <div class="relative max-w-[1240px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <div class="grid grid-cols-12 gap-10 mb-12 items-end">
+      <div class="col-span-12 lg:col-span-7">
+        <div class="chip mb-5">Lessons · curated</div>
+        <h2 class="display text-[44px] lg:text-[68px] text-ink">Teachers we recommend,<br/><em class="text-crimson">working in the Netherlands.</em></h2>
+      </div>
+      <div class="col-span-12 lg:col-span-4 lg:col-start-9">
+        <p class="text-ink/75">A short list of teachers we know personally — each carrying a real lineage, each accepting a small number of new students each season.</p>
+        <p class="mt-4 text-ink/55 text-sm italic">Curating in progress · sample listings shown below.</p>
+      </div>
+    </div>
+
+    <!-- filter chips -->
+    <div class="flex flex-wrap gap-2 mb-10">
+      <button class="filter-chip is-active">All</button>
+      <button class="filter-chip">Sitar</button>
+      <button class="filter-chip">Tabla</button>
+      <button class="filter-chip">Bansuri</button>
+      <button class="filter-chip">Vocal</button>
+      <button class="filter-chip">Harmonium</button>
+      <button class="filter-chip">Sarod</button>
+    </div>
+
+    <div class="grid grid-cols-12 gap-6">
+      <article class="card col-span-12 md:col-span-6 lg:col-span-4 overflow-hidden flex flex-col">
+        <div class="img-warm aspect-[4/5]">
+          <img alt="Sitar teacher portrait" src="https://placehold.co/640x800/2A1A12/E08E45/png?text=Sitar+%C2%B7+Teacher" />
+        </div>
+        <div class="p-7">
+          <div class="flex items-center justify-between text-[11px] tracking-[0.35em] uppercase">
+            <span class="text-gold2">Sitar</span>
+            <span class="text-ink/40">Imdadkhani gharana</span>
+          </div>
+          <h3 class="mt-3 text-2xl text-ink">Teacher · Amsterdam</h3>
+          <p class="mt-3 text-ink/70 text-sm">Maihar-trained sitarist; teaches alaap, jor and gat in a slow, breath-led style. Accepts beginners.</p>
+          <div class="mt-6 flex items-center justify-between text-sm">
+            <span class="text-ink/60">Mon &amp; Wed evenings</span>
+            <a href="#contact" class="text-crimson hover:underline">Get in touch →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card col-span-12 md:col-span-6 lg:col-span-4 overflow-hidden flex flex-col">
+        <div class="img-warm aspect-[4/5]">
+          <img alt="Tabla teacher portrait" src="https://placehold.co/640x800/1A0F0A/C8A560/png?text=Tabla+%C2%B7+Teacher" />
+        </div>
+        <div class="p-7">
+          <div class="flex items-center justify-between text-[11px] tracking-[0.35em] uppercase">
+            <span class="text-gold2">Tabla</span>
+            <span class="text-ink/40">Punjab gharana</span>
+          </div>
+          <h3 class="mt-3 text-2xl text-ink">Teacher · Utrecht</h3>
+          <p class="mt-3 text-ink/70 text-sm">Senior disciple of an Indian master. Rigorous bols, patient hands, a love of teen taal.</p>
+          <div class="mt-6 flex items-center justify-between text-sm">
+            <span class="text-ink/60">Tuesday evenings</span>
+            <a href="#contact" class="text-crimson hover:underline">Get in touch →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card col-span-12 md:col-span-6 lg:col-span-4 overflow-hidden flex flex-col">
+        <div class="img-warm aspect-[4/5]">
+          <img alt="Bansuri teacher portrait" src="https://placehold.co/640x800/7C1F2E/F8F0E1/png?text=Bansuri+%C2%B7+Teacher" />
+        </div>
+        <div class="p-7">
+          <div class="flex items-center justify-between text-[11px] tracking-[0.35em] uppercase">
+            <span class="text-gold2">Bansuri</span>
+            <span class="text-ink/40">Hariprasad lineage</span>
+          </div>
+          <h3 class="mt-3 text-2xl text-ink">Teacher · Den Haag</h3>
+          <p class="mt-3 text-ink/70 text-sm">Eight years of study in Mumbai. Teaches breath, bamboo flute and the inner geometry of meend.</p>
+          <div class="mt-6 flex items-center justify-between text-sm">
+            <span class="text-ink/60">Thursday afternoons</span>
+            <a href="#contact" class="text-crimson hover:underline">Get in touch →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card col-span-12 md:col-span-6 lg:col-span-4 overflow-hidden flex flex-col">
+        <div class="img-warm aspect-[4/5]">
+          <img alt="Vocal teacher portrait" src="https://placehold.co/640x800/3a2010/E08E45/png?text=Vocal+%C2%B7+Teacher" />
+        </div>
+        <div class="p-7">
+          <div class="flex items-center justify-between text-[11px] tracking-[0.35em] uppercase">
+            <span class="text-gold2">Vocal · Khayal</span>
+            <span class="text-ink/40">Kirana gharana</span>
+          </div>
+          <h3 class="mt-3 text-2xl text-ink">Teacher · Amsterdam</h3>
+          <p class="mt-3 text-ink/70 text-sm">Khayal singer with twenty years on stage. Builds the voice slowly through sa, paltas and bhajans.</p>
+          <div class="mt-6 flex items-center justify-between text-sm">
+            <span class="text-ink/60">Saturday mornings</span>
+            <a href="#contact" class="text-crimson hover:underline">Get in touch →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card col-span-12 md:col-span-6 lg:col-span-4 overflow-hidden flex flex-col">
+        <div class="img-warm aspect-[4/5]">
+          <img alt="Harmonium teacher portrait" src="https://placehold.co/640x800/2A1A12/A8853F/png?text=Harmonium+%C2%B7+Teacher" />
+        </div>
+        <div class="p-7">
+          <div class="flex items-center justify-between text-[11px] tracking-[0.35em] uppercase">
+            <span class="text-gold2">Harmonium</span>
+            <span class="text-ink/40">Kirtan tradition</span>
+          </div>
+          <h3 class="mt-3 text-2xl text-ink">Teacher · Rotterdam</h3>
+          <p class="mt-3 text-ink/70 text-sm">Guides beginners into raga through the harmonium — both as a solo instrument and as accompaniment to voice.</p>
+          <div class="mt-6 flex items-center justify-between text-sm">
+            <span class="text-ink/60">Friday evenings</span>
+            <a href="#contact" class="text-crimson hover:underline">Get in touch →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Are you a teacher? CTA card -->
+      <article class="col-span-12 md:col-span-6 lg:col-span-4 rounded-md p-7 flex flex-col justify-between bg-ink text-ivory shadow-saffron relative overflow-hidden">
+        <div class="absolute inset-0 hero-bg opacity-90"></div>
+        <div class="relative">
+          <span class="chip" style="border-color: rgba(248,240,225,0.25); color:#E8C485; background: rgba(248,240,225,0.05);">Open call · Teachers</span>
+          <h3 class="display text-4xl mt-8 text-ivory leading-tight">Teach Indian classical music in NL?</h3>
+          <p class="mt-4 text-ivory/75 text-sm">If you teach in a recognised lineage and accept new students, we'd be glad to list you. We don't take a fee — this is a labour of love.</p>
+        </div>
+        <div class="relative mt-10">
+          <a href="#contact" class="btn-primary">
+            List your teaching
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== CONCERTS ===================== -->
+<section id="concerts" class="bg-ivory">
+  <div class="max-w-[1240px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <div class="grid grid-cols-12 gap-10 mb-12 items-end">
+      <div class="col-span-12 lg:col-span-7">
+        <div class="chip mb-5">Concerts · curated</div>
+        <h2 class="display text-[44px] lg:text-[68px] text-ink">Upcoming concerts<br/><em class="text-crimson">in the Low Countries.</em></h2>
+      </div>
+      <div class="col-span-12 lg:col-span-4 lg:col-start-9">
+        <p class="text-ink/75">House concerts, temple evenings, festival nights — anywhere serious Hindustani music is played to a serious audience, we try to send people there.</p>
+        <p class="mt-4 text-ink/55 text-sm italic">Sample listings shown below.</p>
+      </div>
+    </div>
+
+    <div class="lotus-divider mb-10">
+      <svg width="22" height="22" viewBox="0 0 40 40" fill="none" stroke="#C8A560" stroke-width="0.7"><path d="M20 8 C24 16, 24 24, 20 32 C16 24, 16 16, 20 8 Z"/><path d="M8 20 C16 16, 24 16, 32 20 C24 24, 16 24, 8 20 Z"/><circle cx="20" cy="20" r="2" fill="#C8A560"/></svg>
+    </div>
+
+    <div class="grid grid-cols-12 gap-10">
+      <div class="col-span-12 lg:col-span-8">
+        <a href="#" class="concert-row grid grid-cols-12 gap-4 items-center py-7 px-2 group">
+          <div class="col-span-3 sm:col-span-2">
+            <div class="text-gold2 text-[11px] tracking-[0.3em] uppercase">Fri · 24 Mei</div>
+            <div class="display text-3xl text-ink mt-1">19:30</div>
+          </div>
+          <div class="col-span-9 sm:col-span-7">
+            <h3 class="text-2xl text-ink">Raga Yaman <span class="text-ink/40 font-serif italic">— after sunset</span></h3>
+            <p class="text-ink/65 text-sm mt-1">Sitar &amp; tabla · house concert</p>
+          </div>
+          <div class="hidden sm:block col-span-2 text-sm text-ink/60">Amsterdam</div>
+          <div class="col-span-12 sm:col-span-1 text-right">
+            <span class="text-crimson font-serif italic group-hover:underline">€22</span>
+          </div>
+        </a>
+
+        <a href="#" class="concert-row grid grid-cols-12 gap-4 items-center py-7 px-2 group">
+          <div class="col-span-3 sm:col-span-2">
+            <div class="text-gold2 text-[11px] tracking-[0.3em] uppercase">Sat · 8 Jun</div>
+            <div class="display text-3xl text-ink mt-1">20:00</div>
+          </div>
+          <div class="col-span-9 sm:col-span-7">
+            <h3 class="text-2xl text-ink">Bansuri at dusk</h3>
+            <p class="text-ink/65 text-sm mt-1">Bamboo flute &amp; tanpura</p>
+          </div>
+          <div class="hidden sm:block col-span-2 text-sm text-ink/60">Den Haag</div>
+          <div class="col-span-12 sm:col-span-1 text-right">
+            <span class="text-crimson font-serif italic group-hover:underline">€18</span>
+          </div>
+        </a>
+
+        <a href="#" class="concert-row grid grid-cols-12 gap-4 items-center py-7 px-2 group">
+          <div class="col-span-3 sm:col-span-2">
+            <div class="text-gold2 text-[11px] tracking-[0.3em] uppercase">Thu · 27 Jun</div>
+            <div class="display text-3xl text-ink mt-1">19:00</div>
+          </div>
+          <div class="col-span-9 sm:col-span-7">
+            <h3 class="text-2xl text-ink">Khayal &amp; Bhajan <span class="text-ink/40 font-serif italic">— a slow evening</span></h3>
+            <p class="text-ink/65 text-sm mt-1">Vocal · sarangi · tabla</p>
+          </div>
+          <div class="hidden sm:block col-span-2 text-sm text-ink/60">Utrecht</div>
+          <div class="col-span-12 sm:col-span-1 text-right">
+            <span class="text-crimson font-serif italic group-hover:underline">€26</span>
+          </div>
+        </a>
+
+        <a href="#" class="concert-row grid grid-cols-12 gap-4 items-center py-7 px-2 group">
+          <div class="col-span-3 sm:col-span-2">
+            <div class="text-gold2 text-[11px] tracking-[0.3em] uppercase">Sun · 14 Jul</div>
+            <div class="display text-3xl text-ink mt-1">17:00</div>
+          </div>
+          <div class="col-span-9 sm:col-span-7">
+            <h3 class="text-2xl text-ink">House concert · Sitar &amp; Tabla</h3>
+            <p class="text-ink/65 text-sm mt-1">By invitation — write to receive the address.</p>
+          </div>
+          <div class="hidden sm:block col-span-2 text-sm text-ink/60">Haarlem</div>
+          <div class="col-span-12 sm:col-span-1 text-right">
+            <span class="text-crimson font-serif italic group-hover:underline">€35</span>
+          </div>
+        </a>
+
+        <a href="#" class="concert-row grid grid-cols-12 gap-4 items-center py-7 px-2 group">
+          <div class="col-span-3 sm:col-span-2">
+            <div class="text-gold2 text-[11px] tracking-[0.3em] uppercase">Sat · 6 Sep</div>
+            <div class="display text-3xl text-ink mt-1">20:30</div>
+          </div>
+          <div class="col-span-9 sm:col-span-7">
+            <h3 class="text-2xl text-ink">Festival opening — Raga &amp; Silence</h3>
+            <p class="text-ink/65 text-sm mt-1">Six artists, one evening of late-summer ragas.</p>
+          </div>
+          <div class="hidden sm:block col-span-2 text-sm text-ink/60">Rotterdam</div>
+          <div class="col-span-12 sm:col-span-1 text-right">
+            <span class="text-crimson font-serif italic group-hover:underline">€32</span>
+          </div>
+        </a>
+
+        <div class="pt-10">
+          <a href="#" class="inline-flex items-center gap-2 text-ink hover:text-crimson transition-colors text-sm border-b border-ink/30 hover:border-crimson pb-1">
+            See the full season
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <aside class="col-span-12 lg:col-span-4">
+        <div class="img-warm aspect-[4/5]">
+          <img alt="A house concert" src="https://placehold.co/640x800/1A0F0A/E08E45/png?text=Concert+listing" />
+        </div>
+        <div class="mt-6 p-6 border border-gold/25 rounded-md bg-ivory2/40">
+          <p class="text-[11px] tracking-[0.3em] uppercase text-gold2 mb-3">Open call · Organisers</p>
+          <h3 class="font-serif text-2xl text-ink leading-tight">Hosting a Hindustani concert?</h3>
+          <p class="mt-3 text-sm text-ink/70">If you're presenting Indian classical music in the Netherlands — house concert, temple evening, festival night — send it to us. Listing is free.</p>
+          <a href="#contact" class="mt-5 btn-line">
+            Promote your concert
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== THEORY / PRIMER ===================== -->
+<section id="theory" class="bg-ink text-ivory relative overflow-hidden">
+  <div class="grain"></div>
+
+  <svg class="mandala" style="top:50%; right:-200px; width:600px; height:600px; transform: translateY(-50%);" viewBox="0 0 200 200" fill="none">
+    <g stroke="#E08E45" stroke-width="0.3" fill="none">
+      <circle cx="100" cy="100" r="40"/><circle cx="100" cy="100" r="55"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="85"/><circle cx="100" cy="100" r="95"/>
+    </g>
+  </svg>
+
+  <div class="relative max-w-[1240px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <div class="grid grid-cols-12 gap-10 mb-14 items-end">
+      <div class="col-span-12 lg:col-span-7">
+        <div class="chip" style="border-color: rgba(200,165,96,0.45); color:#E8C485; background: rgba(248,240,225,0.04);">A short primer</div>
+        <p class="deva text-saffron text-3xl mt-5 mb-2 select-none" aria-hidden="true">राग · ताल</p>
+        <h2 class="display text-[44px] lg:text-[72px] text-ivory">If you're new<br/><em class="text-saffron">to the music…</em></h2>
+      </div>
+      <div class="col-span-12 lg:col-span-4 lg:col-start-9">
+        <p class="text-ivory/75">Hindustani classical music has its own grammar — older than the harmonic system most Western ears grew up with. A few words, before you sit down to listen.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12 gap-6">
+      <!-- Raga -->
+      <div class="concept col-span-12 md:col-span-6 lg:col-span-4 p-7 text-ink2">
+        <div class="flex items-start justify-between">
+          <span class="text-[11px] tracking-[0.35em] uppercase text-gold2">01</span>
+          <p class="deva text-crimson text-lg select-none" aria-hidden="true">राग</p>
+        </div>
+        <h3 class="display text-3xl mt-6">Raga</h3>
+        <p class="mt-3 text-ink/75 text-sm">More than a scale, less than a song. A raga is a melodic framework with rules — which notes to use, which to bend, which to dwell on — bound to a time of day, a season, a mood. Two musicians can play the same raga for an hour each and never repeat themselves.</p>
+      </div>
+
+      <!-- Tala -->
+      <div class="concept col-span-12 md:col-span-6 lg:col-span-4 p-7 text-ink2">
+        <div class="flex items-start justify-between">
+          <span class="text-[11px] tracking-[0.35em] uppercase text-gold2">02</span>
+          <p class="deva text-crimson text-lg select-none" aria-hidden="true">ताल</p>
+        </div>
+        <h3 class="display text-3xl mt-6">Tala</h3>
+        <p class="mt-3 text-ink/75 text-sm">The rhythmic cycle. Where Western music tends to count in fours, Hindustani music breathes in cycles of seven, ten, twelve, sixteen — even longer. The tabla holds the cycle; the soloist plays with it, against it, returning home on the first beat (sam) like a tide turning.</p>
+      </div>
+
+      <!-- Sargam -->
+      <div class="concept col-span-12 md:col-span-6 lg:col-span-4 p-7 text-ink2">
+        <div class="flex items-start justify-between">
+          <span class="text-[11px] tracking-[0.35em] uppercase text-gold2">03</span>
+          <p class="deva text-crimson text-lg select-none" aria-hidden="true">सरगम</p>
+        </div>
+        <h3 class="display text-3xl mt-6">Sargam</h3>
+        <p class="mt-3 text-ink/75 text-sm">The seven solfège syllables of Indian music: <em class="text-crimson not-italic font-serif">Sa Re Ga Ma Pa Dha Ni Sa</em>. Sa is the tonic — wherever the singer chooses it. The whole raga is heard in relation to that one note, hummed underneath by the tanpura.</p>
+      </div>
+
+      <!-- Gharana -->
+      <div class="concept col-span-12 md:col-span-6 lg:col-span-4 p-7 text-ink2">
+        <div class="flex items-start justify-between">
+          <span class="text-[11px] tracking-[0.35em] uppercase text-gold2">04</span>
+          <p class="deva text-crimson text-lg select-none" aria-hidden="true">घराना</p>
+        </div>
+        <h3 class="display text-3xl mt-6">Gharana</h3>
+        <p class="mt-3 text-ink/75 text-sm">Literally "household." A lineage of teaching, passed from master to student over generations. Each gharana has its own dialect — its own way of approaching a note, holding silence, decorating a phrase. Knowing the gharana is knowing where the music comes from.</p>
+      </div>
+
+      <!-- Tanpura -->
+      <div class="concept col-span-12 md:col-span-6 lg:col-span-4 p-7 text-ink2">
+        <div class="flex items-start justify-between">
+          <span class="text-[11px] tracking-[0.35em] uppercase text-gold2">05</span>
+          <p class="deva text-crimson text-lg select-none" aria-hidden="true">तानपुरा</p>
+        </div>
+        <h3 class="display text-3xl mt-6">Tanpura</h3>
+        <p class="mt-3 text-ink/75 text-sm">The unbroken hum at the back of every recording: a long-necked drone instrument with four strings, plucked slowly throughout the entire performance. It is the sound of the tonic and the fifth, breathing — the pillow on which raga rests.</p>
+      </div>
+
+      <!-- Performance arc -->
+      <div class="concept col-span-12 md:col-span-6 lg:col-span-4 p-7 text-ink2">
+        <div class="flex items-start justify-between">
+          <span class="text-[11px] tracking-[0.35em] uppercase text-gold2">06</span>
+          <p class="deva text-crimson text-lg select-none" aria-hidden="true">आलाप · गत</p>
+        </div>
+        <h3 class="display text-3xl mt-6">The arc of a piece</h3>
+        <p class="mt-3 text-ink/75 text-sm">A typical instrumental performance unfolds in stages — slow to fast, alone to together:</p>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="arc-step"><span class="num">ALAP</span><span class="text-ink/70">Slow, free exploration of the raga, with no rhythm yet. Just the soloist and the tanpura.</span></li>
+          <li class="arc-step"><span class="num">JOR</span><span class="text-ink/70">A pulse begins. The melody starts to walk.</span></li>
+          <li class="arc-step"><span class="num">JHALA</span><span class="text-ink/70">Pulse becomes drive. The piece accelerates.</span></li>
+          <li class="arc-step"><span class="num">GAT</span><span class="text-ink/70">The tabla joins. Now there is a composed theme to return to, between flights of improvisation.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 text-center">
+      <p class="text-ivory/60 text-sm italic max-w-2xl mx-auto">
+        “The raga is not a song — it is a season of the soul, returned to whoever sits with it long enough.”
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== ABOUT US ===================== -->
+<section id="about" class="bg-ivory2/60 relative overflow-hidden">
+  <svg class="mandala" style="top:50%; right:-180px; width:520px; height:520px; transform: translateY(-50%);" viewBox="0 0 200 200" fill="none">
+    <g stroke="#7C1F2E" stroke-width="0.3" fill="none">
+      <circle cx="100" cy="100" r="40"/><circle cx="100" cy="100" r="55"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="85"/>
+    </g>
+  </svg>
+
+  <div class="relative max-w-[1240px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+    <div class="grid grid-cols-12 gap-10 items-start">
+      <div class="col-span-12 lg:col-span-7">
+        <div class="chip mb-5">Who we are</div>
+        <h2 class="display text-[44px] lg:text-[72px] text-ink">A few Dutch lovers<br/><em class="text-crimson">of Indian classical music.</em></h2>
+        <p class="mt-8 text-ink/75 max-w-xl text-lg">
+          We're a small group of friends in the Netherlands — listeners, students, and concert-goers — who keep ending up in the same temples, living rooms, and concert halls, drawn back again and again by this music.
+        </p>
+        <p class="mt-5 text-ink/75 max-w-xl">
+          We don't teach. We don't perform. We don't sell instruments.
+          We just decided, after enough late evenings of searching, that there should be one quiet place online where good teachers and good concerts in the Netherlands can be found together.
+        </p>
+        <p class="mt-5 text-ink/75 max-w-xl">
+          Sacred Sounds of India is non-commercial. Listings are free. We work on it in the evenings, around the rest of our lives.
+        </p>
+      </div>
+
+      <div class="col-span-12 lg:col-span-4 lg:col-start-9 lg:pt-4">
+        <div class="border-l border-gold/40 pl-6">
+          <p class="text-[11px] tracking-[0.3em] uppercase text-gold2">Names &amp; faces</p>
+          <p class="mt-3 text-ink/75 italic font-serif text-lg">— following soon —</p>
+          <p class="mt-3 text-ink/65 text-sm">We'll introduce ourselves properly in the next update.</p>
+        </div>
+
+        <div class="mt-10 border-l border-gold/40 pl-6">
+          <p class="text-[11px] tracking-[0.3em] uppercase text-gold2">Want to help?</p>
+          <p class="mt-3 text-ink/75 text-sm">Suggest a teacher, a concert, or a small piece of writing. Or just say hello.</p>
+          <a href="#contact" class="mt-4 inline-flex items-center gap-2 text-crimson border-b border-crimson/40 hover:border-crimson pb-1 transition-colors text-sm">
+            Write to us
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== CONTACT / NEWSLETTER ===================== -->
+<section id="contact" class="bg-ink text-ivory relative overflow-hidden">
+  <div class="grain"></div>
+
+  <svg class="mandala" style="top:50%; left:50%; width:700px; height:700px; transform: translate(-50%,-50%);" viewBox="0 0 200 200" fill="none">
+    <g stroke="#E08E45" stroke-width="0.3" fill="none">
+      <circle cx="100" cy="100" r="40"/><circle cx="100" cy="100" r="55"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="85"/><circle cx="100" cy="100" r="95"/>
+    </g>
+  </svg>
+
+  <div class="relative max-w-[1100px] mx-auto px-6 lg:px-10 py-24 lg:py-32 text-center">
+    <p class="deva text-saffron text-2xl mb-6" aria-hidden="true">शान्तिः</p>
+    <h2 class="display text-[42px] lg:text-[68px] text-ivory">Send us a teacher,<br/><em class="text-saffron">a concert, or a question.</em></h2>
+    <p class="mt-6 max-w-xl mx-auto text-ivory/75">
+      We read everything. If you're a teacher of Indian classical music in the Netherlands,
+      a concert organiser, or a student looking for someone to study with — write to us.
+      A short letter, four times a year, keeps you up to date.
+    </p>
+
+    <div class="mt-12 grid grid-cols-12 gap-10 text-left">
+      <!-- contact -->
+      <div class="col-span-12 md:col-span-6">
+        <p class="text-[11px] tracking-[0.3em] uppercase text-gold mb-4">Write</p>
+        <a href="mailto:hello@sacredsoundsofindia.nl" class="display text-3xl text-ivory hover:text-saffron transition-colors">hello@sacredsoundsofindia.nl</a>
+        <p class="mt-3 text-ivory/65 text-sm">For listings, questions or simply to say hello. We answer within a few days.</p>
+      </div>
+
+      <!-- newsletter -->
+      <div class="col-span-12 md:col-span-6">
+        <p class="text-[11px] tracking-[0.3em] uppercase text-gold mb-4">Receive the letter</p>
+        <form class="flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault();">
+          <label class="sr-only" for="email">Email address</label>
+          <input id="email" type="email" required placeholder="your.email@example.com"
+            class="flex-1 bg-transparent border border-ivory/30 focus:border-saffron focus:outline-none rounded-full px-5 py-3 text-ivory placeholder:text-ivory/40 transition-colors text-sm" />
+          <button class="btn-primary text-sm" type="submit">
+            Sign up
+          </button>
+        </form>
+        <p class="mt-3 text-ivory/55 text-[11px] tracking-[0.2em] uppercase">No spam · 4× per year · Unsubscribe anytime</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-ink2 text-ivory/80">
+  <div class="max-w-[1240px] mx-auto px-6 lg:px-10 py-14">
+    <div class="grid grid-cols-12 gap-10">
+      <div class="col-span-12 lg:col-span-5">
+        <div class="flex items-center gap-3 mb-5">
+          <svg viewBox="0 0 40 40" class="w-9 h-9 text-saffron">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.55"/>
+            <circle cx="20" cy="20" r="13" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.7"/>
+            <g stroke="currentColor" stroke-width="0.7" fill="none" opacity="0.95">
+              <path d="M20 6 C25 14, 25 26, 20 34 C15 26, 15 14, 20 6 Z"/>
+              <path d="M6 20 C14 15, 26 15, 34 20 C26 25, 14 25, 6 20 Z"/>
+            </g>
+            <circle cx="20" cy="20" r="2" fill="currentColor"/>
+          </svg>
+          <span class="leading-tight">
+            <span class="block text-ivory text-[14px] font-medium tracking-[0.18em]">SACRED SOUNDS</span>
+            <span class="block text-gold text-[10px] tracking-[0.32em]">— OF INDIA —</span>
+          </span>
+        </div>
+        <p class="text-sm max-w-sm">
+          A small Dutch knowledge channel for Hindustani classical music —
+          good teachers, good concerts, and a primer on the tradition.
+        </p>
+      </div>
+
+      <div class="col-span-6 lg:col-span-2">
+        <p class="text-[11px] tracking-[0.3em] uppercase text-gold mb-4">Discover</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#lessons" class="hover:text-saffron transition-colors">Lessons</a></li>
+          <li><a href="#concerts" class="hover:text-saffron transition-colors">Concerts</a></li>
+          <li><a href="#theory" class="hover:text-saffron transition-colors">A primer</a></li>
+          <li><a href="#about" class="hover:text-saffron transition-colors">About us</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-6 lg:col-span-2">
+        <p class="text-[11px] tracking-[0.3em] uppercase text-gold mb-4">Submit</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#contact" class="hover:text-saffron transition-colors">List your teaching</a></li>
+          <li><a href="#contact" class="hover:text-saffron transition-colors">Promote a concert</a></li>
+          <li><a href="#contact" class="hover:text-saffron transition-colors">Suggest a teacher</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-12 lg:col-span-3">
+        <p class="text-[11px] tracking-[0.3em] uppercase text-gold mb-4">Write</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="mailto:hello@sacredsoundsofindia.nl" class="hover:text-saffron transition-colors">hello@sacredsoundsofindia.nl</a></li>
+        </ul>
+
+        <div class="mt-6 flex items-center gap-3">
+          <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-ivory/25 flex items-center justify-center hover:border-saffron hover:text-saffron transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full border border-ivory/25 flex items-center justify-center hover:border-saffron hover:text-saffron transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-6 border-t border-ivory/10 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between text-[12px] text-ivory/55">
+      <p>© 2026 Sacred Sounds of India · Made by Dutch lovers of Indian classical music</p>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-saffron transition-colors">Privacy</a>
+        <a href="#" class="hover:text-saffron transition-colors">Newsletter archive</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
