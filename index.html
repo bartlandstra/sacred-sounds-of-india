@@ -16,15 +16,16 @@
     theme: {
       extend: {
         colors: {
-          ink:      '#1A0F0A',
-          ink2:     '#2A1A12',
-          saffron:  '#E08E45',
-          saffron2: '#D2772E',
-          crimson:  '#7C1F2E',
-          gold:     '#C8A560',
+          ink:      '#150A05',
+          ink2:     '#241108',
+          ember:    '#3A1A0A',
+          saffron:  '#E08043',
+          saffron2: '#C66A28',
+          crimson:  '#8A1F26',
+          gold:     '#D6AE65',
           gold2:    '#A8853F',
-          ivory:    '#F8F0E1',
-          ivory2:   '#F1E5CE',
+          ivory:    '#F6EBD4',
+          ivory2:   '#EEDFC0',
           mist:     '#EFE3CC',
         },
         fontFamily: {
@@ -52,10 +53,10 @@
 
   .hero-bg {
     background:
-      radial-gradient(ellipse 80% 60% at 80% 20%, rgba(224,142,69,0.55) 0%, transparent 60%),
-      radial-gradient(ellipse 70% 50% at 15% 80%, rgba(124,31,46,0.55) 0%, transparent 60%),
-      radial-gradient(ellipse 100% 80% at 50% 110%, rgba(200,165,96,0.35) 0%, transparent 70%),
-      linear-gradient(180deg, #1A0F0A 0%, #2A1A12 100%);
+      radial-gradient(ellipse 70% 55% at 80% 15%, rgba(224,128,67,0.65) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 45% at 15% 85%, rgba(138,31,38,0.55) 0%, transparent 60%),
+      radial-gradient(ellipse 100% 80% at 50% 110%, rgba(214,174,101,0.30) 0%, transparent 70%),
+      linear-gradient(180deg, #150A05 0%, #241108 60%, #2A130A 100%);
   }
   .grain {
     position: absolute; inset: 0; pointer-events: none;
@@ -83,11 +84,97 @@
   }
   .img-warm:hover > img { transform: scale(1.03); }
 
-  .lotus-divider { display: flex; align-items: center; justify-content: center; gap: 14px; color: #C8A560; }
+  .lotus-divider { display: flex; align-items: center; justify-content: center; gap: 14px; color: #D6AE65; }
   .lotus-divider::before, .lotus-divider::after {
     content: ""; flex: 1; max-width: 120px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(200,165,96,0.6), transparent);
+    background: linear-gradient(90deg, transparent, rgba(214,174,101,0.6), transparent);
+  }
+
+  /* ornate star divider — echoes the sunburst in the logo */
+  .star-divider {
+    display: flex; align-items: center; justify-content: center; gap: 18px;
+    color: #D6AE65;
+  }
+  .star-divider::before, .star-divider::after {
+    content: ""; flex: 1; max-width: 160px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(214,174,101,0.55), transparent);
+  }
+  .star-divider .ornament {
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .star-divider .ornament .dot { width: 4px; height: 4px; border-radius: 50%; background: #D6AE65; opacity: 0.6; }
+
+  /* logo glow — when actual PNG is in place */
+  .logo-frame {
+    position: relative;
+    display: inline-block;
+    border-radius: 6px;
+    box-shadow:
+      0 0 0 1px rgba(214,174,101,0.18),
+      0 30px 80px -20px rgba(138,31,38,0.55),
+      0 60px 120px -30px rgba(224,128,67,0.45);
+  }
+  .logo-frame::after {
+    content: ""; position: absolute; inset: -1px; border-radius: 6px;
+    background: linear-gradient(135deg, rgba(214,174,101,0.4), transparent 30%, transparent 70%, rgba(214,174,101,0.3));
+    pointer-events: none;
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+  }
+  /* fallback if logo.png isn't present yet */
+  .logo-fallback {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    background:
+      radial-gradient(circle at 50% 45%, rgba(214,174,101,0.3) 0%, transparent 55%),
+      radial-gradient(circle at 50% 50%, #3A1A0A 0%, #150A05 80%);
+    border: 1px solid rgba(214,174,101,0.25);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    color: #F6EBD4;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    padding: 10%;
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-fallback::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%23D6AE65' stroke-width='0.4' opacity='0.18'><circle cx='100' cy='100' r='80'/><circle cx='100' cy='100' r='65'/><circle cx='100' cy='100' r='50'/><g transform='translate(100 100)'><g id='r'><line x1='0' y1='-78' x2='0' y2='-58' stroke-width='0.6'/></g><use href='%23r' transform='rotate(15)'/><use href='%23r' transform='rotate(30)'/><use href='%23r' transform='rotate(45)'/><use href='%23r' transform='rotate(60)'/><use href='%23r' transform='rotate(75)'/><use href='%23r' transform='rotate(90)'/><use href='%23r' transform='rotate(105)'/><use href='%23r' transform='rotate(120)'/><use href='%23r' transform='rotate(135)'/><use href='%23r' transform='rotate(150)'/><use href='%23r' transform='rotate(165)'/><use href='%23r' transform='rotate(180)'/><use href='%23r' transform='rotate(195)'/><use href='%23r' transform='rotate(210)'/><use href='%23r' transform='rotate(225)'/><use href='%23r' transform='rotate(240)'/><use href='%23r' transform='rotate(255)'/><use href='%23r' transform='rotate(270)'/><use href='%23r' transform='rotate(285)'/><use href='%23r' transform='rotate(300)'/><use href='%23r' transform='rotate(315)'/><use href='%23r' transform='rotate(330)'/><use href='%23r' transform='rotate(345)'/></g></svg>");
+    background-size: cover;
+    pointer-events: none;
+  }
+  .logo-fallback .lf-deco {
+    width: 60%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(214,174,101,0.6), transparent);
+    margin: 18px 0;
+  }
+  .logo-fallback .lf-title {
+    font-size: clamp(2.2rem, 5vw, 4.4rem);
+    font-style: italic;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: #F6EBD4;
+    position: relative;
+  }
+  .logo-fallback .lf-sub {
+    font-style: italic;
+    color: #D6AE65;
+    font-size: clamp(0.9rem, 1.6vw, 1.4rem);
+    margin-top: 14px;
+    position: relative;
+  }
+  .logo-fallback .lf-hint {
+    position: absolute; bottom: 14px; left: 0; right: 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: rgba(214,174,101,0.55);
   }
 
   .nav-link { position: relative; font-size: 0.92rem; letter-spacing: 0.04em; padding: 6px 2px; }
@@ -304,63 +391,60 @@
     </g>
   </svg>
 
-  <div class="relative max-w-[1240px] mx-auto px-6 lg:px-10 pt-44 lg:pt-56 pb-32 lg:pb-40">
-    <div class="grid grid-cols-12 gap-8 items-end">
-      <div class="col-span-12 lg:col-span-8">
-        <div class="flex items-center gap-3 mb-8">
-          <span class="w-12 h-px bg-gold"></span>
-          <span class="text-gold text-[12px] tracking-[0.4em] uppercase">A knowledge channel · Nederland</span>
-        </div>
+  <div class="relative max-w-[1240px] mx-auto px-6 lg:px-10 pt-40 lg:pt-48 pb-28 lg:pb-32">
+    <!-- centred logo as hero centerpiece -->
+    <div class="flex flex-col items-center text-center">
 
-        <p class="deva text-saffron text-3xl mb-4 select-none" aria-hidden="true">सङ्गीत</p>
+      <div class="flex items-center gap-3 mb-10">
+        <span class="w-10 h-px bg-gold"></span>
+        <span class="text-gold text-[11px] tracking-[0.4em] uppercase">A Dutch knowledge channel</span>
+        <span class="w-10 h-px bg-gold"></span>
+      </div>
 
-        <h1 class="display text-ivory text-[60px] sm:text-[80px] lg:text-[112px] font-light">
-          Where to <em class="italic text-saffron">study</em><br/>
-          Indian classical music,<br/>
-          and where to <span class="underline-soft">hear it</span>.
-        </h1>
-
-        <p class="mt-10 max-w-xl text-ivory/80 text-lg leading-relaxed">
-          A curated Dutch guide to Hindustani classical music —
-          good teachers to study with, good concerts to listen to,
-          and a quiet primer on the tradition itself.
-        </p>
-
-        <div class="mt-12 flex flex-wrap items-center gap-4">
-          <a href="#lessons" class="btn-primary">
-            Find a teacher
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#concerts" class="btn-ghost">Upcoming concerts</a>
+      <!-- logo block -->
+      <div class="logo-frame w-full max-w-[560px]">
+        <img src="./logo.png" alt="Sacred Sounds of India — in concert"
+             class="block w-full h-auto rounded-[6px]"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <!-- SVG fallback shown until logo.png is added -->
+        <div class="logo-fallback" style="display:none;">
+          <div class="lf-title">Sacred<br/><em>Sounds</em></div>
+          <div class="lf-deco"></div>
+          <div class="lf-title" style="font-style: normal; font-weight: 600;">of India</div>
+          <div class="lf-sub">— a knowledge channel —</div>
+          <div class="lf-hint">Save logo.png to project root</div>
         </div>
       </div>
 
-      <div class="col-span-12 lg:col-span-4 hidden lg:block">
-        <div class="border-l border-gold/30 pl-6 text-ivory/70 max-w-xs">
-          <p class="text-[11px] tracking-[0.3em] uppercase text-gold mb-3">Who we are</p>
-          <p class="text-sm leading-relaxed text-mist">
-            A small group of Dutch lovers of Indian classical music.
-            We don't teach. We don't perform. We point you to
-            the people who do it well.
-          </p>
-          <a href="#about" class="mt-4 inline-flex items-center gap-2 text-ivory border-b border-ivory/30 hover:border-ivory pb-1 transition-colors text-sm">
-            More about us
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
-        </div>
+      <!-- subtitle -->
+      <p class="mt-12 max-w-xl text-ivory/85 text-lg leading-relaxed font-serif italic">
+        A curated Dutch guide to Hindustani classical music —
+        good teachers to study with, good concerts to listen to,
+        and a quiet primer on the tradition itself.
+      </p>
 
-        <div class="mt-12 border-l border-gold/30 pl-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-saffron opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-saffron"></span>
-            </span>
-            <span class="text-[12px] tracking-[0.3em] text-gold uppercase">Open call</span>
-          </div>
-          <p class="text-ivory/85 text-sm leading-relaxed">
-            Are you a teacher of Indian classical music in NL,
-            or organising a concert? Send it to us — we'll list it.
-          </p>
+      <!-- CTAs -->
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <a href="#lessons" class="btn-primary">
+          Find a teacher
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#concerts" class="btn-ghost">Upcoming concerts</a>
+      </div>
+
+      <!-- meta band -->
+      <div class="mt-16 lg:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-3xl text-left text-ivory/75">
+        <div class="border-l border-gold/30 pl-5">
+          <p class="text-[10px] tracking-[0.3em] uppercase text-gold mb-2">Who we are</p>
+          <p class="text-sm leading-relaxed">A small group of Dutch lovers of Indian classical music. We don't teach. We don't perform. We point you to the people who do.</p>
+        </div>
+        <div class="border-l border-gold/30 pl-5">
+          <p class="text-[10px] tracking-[0.3em] uppercase text-gold mb-2">For students</p>
+          <p class="text-sm leading-relaxed">Find a teacher of sitar, tabla, bansuri, vocal or harmonium — working in their lineage, somewhere in the Netherlands.</p>
+        </div>
+        <div class="border-l border-gold/30 pl-5">
+          <p class="text-[10px] tracking-[0.3em] uppercase text-gold mb-2">For organisers</p>
+          <p class="text-sm leading-relaxed">Hosting an Indian classical concert in NL? Send it to us — listing is free, and we'll help spread the word.</p>
         </div>
       </div>
     </div>
