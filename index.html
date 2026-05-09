@@ -126,55 +126,87 @@
     mask-composite: exclude;
     padding: 1px;
   }
-  /* fallback if logo.png isn't present yet */
-  .logo-fallback {
+  /* === Brand mark — inline SVG/HTML umbrella logo === */
+  .brand-mark {
     aspect-ratio: 1 / 1;
     width: 100%;
-    background:
-      radial-gradient(circle at 50% 45%, rgba(214,174,101,0.3) 0%, transparent 55%),
-      radial-gradient(circle at 50% 50%, #3A1A0A 0%, #150A05 80%);
-    border: 1px solid rgba(214,174,101,0.25);
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column;
-    color: #F6EBD4;
-    font-family: 'Cormorant Garamond', serif;
-    text-align: center;
-    padding: 10%;
     position: relative;
     overflow: hidden;
+    border-radius: 6px;
+    color: #F6EBD4;
+    font-family: 'Cormorant Garamond', serif;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 45%, rgba(224,128,67,0.35) 0%, transparent 55%),
+      radial-gradient(circle at 50% 50%, #3F1B0A 0%, #1A0905 78%, #110603 100%);
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.45);
   }
-  .logo-fallback::before {
+  /* sunburst texture */
+  .brand-mark::before {
     content: ""; position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%23D6AE65' stroke-width='0.4' opacity='0.18'><circle cx='100' cy='100' r='80'/><circle cx='100' cy='100' r='65'/><circle cx='100' cy='100' r='50'/><g transform='translate(100 100)'><g id='r'><line x1='0' y1='-78' x2='0' y2='-58' stroke-width='0.6'/></g><use href='%23r' transform='rotate(15)'/><use href='%23r' transform='rotate(30)'/><use href='%23r' transform='rotate(45)'/><use href='%23r' transform='rotate(60)'/><use href='%23r' transform='rotate(75)'/><use href='%23r' transform='rotate(90)'/><use href='%23r' transform='rotate(105)'/><use href='%23r' transform='rotate(120)'/><use href='%23r' transform='rotate(135)'/><use href='%23r' transform='rotate(150)'/><use href='%23r' transform='rotate(165)'/><use href='%23r' transform='rotate(180)'/><use href='%23r' transform='rotate(195)'/><use href='%23r' transform='rotate(210)'/><use href='%23r' transform='rotate(225)'/><use href='%23r' transform='rotate(240)'/><use href='%23r' transform='rotate(255)'/><use href='%23r' transform='rotate(270)'/><use href='%23r' transform='rotate(285)'/><use href='%23r' transform='rotate(300)'/><use href='%23r' transform='rotate(315)'/><use href='%23r' transform='rotate(330)'/><use href='%23r' transform='rotate(345)'/></g></svg>");
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%23D6AE65' stroke-width='0.35' opacity='0.22'><g transform='translate(100 100)'><g id='r'><line x1='0' y1='-95' x2='0' y2='-30'/></g><use href='%23r' transform='rotate(10)'/><use href='%23r' transform='rotate(20)'/><use href='%23r' transform='rotate(30)'/><use href='%23r' transform='rotate(40)'/><use href='%23r' transform='rotate(50)'/><use href='%23r' transform='rotate(60)'/><use href='%23r' transform='rotate(70)'/><use href='%23r' transform='rotate(80)'/><use href='%23r' transform='rotate(90)'/><use href='%23r' transform='rotate(100)'/><use href='%23r' transform='rotate(110)'/><use href='%23r' transform='rotate(120)'/><use href='%23r' transform='rotate(130)'/><use href='%23r' transform='rotate(140)'/><use href='%23r' transform='rotate(150)'/><use href='%23r' transform='rotate(160)'/><use href='%23r' transform='rotate(170)'/><use href='%23r' transform='rotate(180)'/><use href='%23r' transform='rotate(190)'/><use href='%23r' transform='rotate(200)'/><use href='%23r' transform='rotate(210)'/><use href='%23r' transform='rotate(220)'/><use href='%23r' transform='rotate(230)'/><use href='%23r' transform='rotate(240)'/><use href='%23r' transform='rotate(250)'/><use href='%23r' transform='rotate(260)'/><use href='%23r' transform='rotate(270)'/><use href='%23r' transform='rotate(280)'/><use href='%23r' transform='rotate(290)'/><use href='%23r' transform='rotate(300)'/><use href='%23r' transform='rotate(310)'/><use href='%23r' transform='rotate(320)'/><use href='%23r' transform='rotate(330)'/><use href='%23r' transform='rotate(340)'/><use href='%23r' transform='rotate(350)'/><circle r='28'/><circle r='42' opacity='0.6'/><circle r='58' opacity='0.4'/></g></svg>");
     background-size: cover;
     pointer-events: none;
   }
-  .logo-fallback .lf-deco {
-    width: 60%; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(214,174,101,0.6), transparent);
-    margin: 18px 0;
+  /* double inset frame */
+  .brand-mark::after {
+    content: ""; position: absolute;
+    top: 4%; left: 4%; right: 4%; bottom: 4%;
+    border: 1px solid rgba(214,174,101,0.55);
+    box-shadow: inset 0 0 0 3px transparent, inset 0 0 0 4px rgba(214,174,101,0.18);
+    border-radius: 2px;
+    pointer-events: none;
   }
-  .logo-fallback .lf-title {
-    font-size: clamp(2.2rem, 5vw, 4.4rem);
-    font-style: italic;
-    line-height: 0.95;
-    letter-spacing: -0.02em;
+  .bm-content {
+    position: relative; z-index: 2;
+    height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 14% 10%;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.6), 0 4px 18px rgba(0,0,0,0.55);
+  }
+  .bm-row {
+    line-height: 0.92;
+    letter-spacing: -0.025em;
     color: #F6EBD4;
-    position: relative;
   }
-  .logo-fallback .lf-sub {
+  .bm-sacred {
+    font-style: italic;
+    font-size: clamp(2.6rem, 9.5vw, 5.2rem);
+    font-weight: 600;
+  }
+  .bm-sounds {
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 9.5vw, 5.2rem);
+    margin-top: -0.05em;
+  }
+  .bm-india {
+    font-weight: 700;
+    font-size: clamp(2.6rem, 9.5vw, 5.2rem);
+    margin-top: 0.1em;
+    letter-spacing: 0.02em;
+  }
+  .bm-mid {
+    display: flex; align-items: center; justify-content: center;
+    gap: clamp(8px, 2vw, 18px);
+    margin: clamp(4px, 1.2vw, 10px) 0;
+  }
+  .bm-of {
     font-style: italic;
     color: #D6AE65;
-    font-size: clamp(0.9rem, 1.6vw, 1.4rem);
-    margin-top: 14px;
-    position: relative;
+    font-size: clamp(1.2rem, 3.6vw, 2rem);
+    font-weight: 500;
   }
-  .logo-fallback .lf-hint {
-    position: absolute; bottom: 14px; left: 0; right: 0;
-    font-family: 'Outfit', sans-serif;
-    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
-    color: rgba(214,174,101,0.55);
+  .bm-orn {
+    color: #D6AE65;
+    font-size: clamp(0.7rem, 1.8vw, 1.1rem);
+    opacity: 0.85;
+  }
+  .bm-rule {
+    width: 56%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(214,174,101,0.65), transparent);
+    margin: clamp(8px, 1.5vw, 14px) 0;
   }
 
   .nav-link { position: relative; font-size: 0.92rem; letter-spacing: 0.04em; padding: 6px 2px; }
@@ -402,17 +434,25 @@
       </div>
 
       <!-- logo block -->
-      <div class="logo-frame w-full max-w-[560px]">
-        <img src="./logo.png" alt="Sacred Sounds of India — in concert"
+      <div class="logo-frame w-full max-w-[520px]">
+        <!-- if you supply ./logo.png it will override the SVG mark below -->
+        <img src="./logo.png" alt="Sacred Sounds of India"
              class="block w-full h-auto rounded-[6px]"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <!-- SVG fallback shown until logo.png is added -->
-        <div class="logo-fallback" style="display:none;">
-          <div class="lf-title">Sacred<br/><em>Sounds</em></div>
-          <div class="lf-deco"></div>
-          <div class="lf-title" style="font-style: normal; font-weight: 600;">of India</div>
-          <div class="lf-sub">— a knowledge channel —</div>
-          <div class="lf-hint">Save logo.png to project root</div>
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <div style="display:none;">
+          <div class="brand-mark" role="img" aria-label="Sacred Sounds of India">
+            <div class="bm-content">
+              <span class="bm-row bm-sacred">Sacred</span>
+              <span class="bm-row bm-sounds">Sounds</span>
+              <div class="bm-rule"></div>
+              <div class="bm-mid">
+                <span class="bm-orn">✦</span>
+                <span class="bm-of">of</span>
+                <span class="bm-orn">✦</span>
+              </div>
+              <span class="bm-row bm-india">India</span>
+            </div>
+          </div>
         </div>
       </div>
 
